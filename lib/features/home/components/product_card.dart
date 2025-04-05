@@ -1,5 +1,5 @@
 import 'package:credpal_test/constants/app_colors.dart';
-import 'package:credpal_test/features/components/cd_text.dart';
+import 'package:credpal_test/features/home/components/cd_text.dart';
 import 'package:credpal_test/models/product.dart';
 import 'package:flutter/material.dart';
 
