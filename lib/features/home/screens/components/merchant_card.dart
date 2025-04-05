@@ -1,4 +1,4 @@
-import 'package:credpal_test/features/home/components/cd_text.dart';
+import 'package:credpal_test/features/home/screens/components/cd_text.dart';
 import 'package:credpal_test/models/merchant.dart';
 import 'package:flutter/material.dart';
 
