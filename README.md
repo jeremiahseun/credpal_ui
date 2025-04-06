@@ -130,7 +130,10 @@ The app uses Flutter ScreenUtil to ensure UI elements scale appropriately across
 
 ## Screenshots
 
-*Note: Please add screenshots of your implementation here before submission.*
+![Screenshot 2025-04-06 at 22 50 57](https://github.com/user-attachments/assets/14120572-71a1-4725-997d-b371e84f5803)
+
+![Screenshot 2025-04-06 at 22 50 48](https://github.com/user-attachments/assets/59fe358f-205f-40b4-b100-12250ce0e6c6)
+
 
 ## Additional Notes
 
