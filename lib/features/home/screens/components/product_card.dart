@@ -44,23 +44,26 @@ class ProductCard extends StatelessWidget {
                       fontWeight: FontWeight.w800,
                     ),
                     const Gap(4),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        CDText(
-                          '₦ ${product.currentPrice.toStringAsFixed(0)}',
-                          fontSize: 14,
-                          fontWeight: FontWeight.w800,
-                          color: AppColors.primary,
-                        ),
-                        CDText(
-                          '₦ ${product.originalPrice.toStringAsFixed(0)}',
-                          fontSize: 12,
-                          fontWeight: FontWeight.w500,
-                          decoration: TextDecoration.lineThrough,
-                          color: Color(0xffB3B3CC),
-                        ),
-                      ],
+                    FittedBox(
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          CDText(
+                            '₦ ${product.currentPrice.toStringAsFixed(0)}',
+                            fontSize: 14,
+                            fontWeight: FontWeight.w800,
+                            color: AppColors.primary,
+                          ),
+                          Gap(10),
+                          CDText(
+                            '₦ ${product.originalPrice.toStringAsFixed(0)}',
+                            fontSize: 12,
+                            fontWeight: FontWeight.w500,
+                            decoration: TextDecoration.lineThrough,
+                            color: Color(0xffB3B3CC),
+                          ),
+                        ],
+                      ),
                     ),
                   ],
                 ),
@@ -83,8 +86,8 @@ class ProductCard extends StatelessWidget {
               child: Image.asset(
                 product.imageUrl,
                 width: 161.w,
-                height: 110.h,
-                fit: BoxFit.contain,
+                height: 120.h,
+                fit: BoxFit.cover,
               ),
             ),
           ),
@@ -97,27 +100,29 @@ class ProductCard extends StatelessWidget {
               child: Container(
                 height: 45.h,
                 width: 45.w,
-                padding: EdgeInsets.only(left: 8),
+                padding: EdgeInsets.all(5),
                 decoration: BoxDecoration(
                   color: AppColors.white,
                   shape: BoxShape.circle,
                 ),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    CDText(
-                      'Pay',
-                      fontSize: 12,
-                      fontWeight: FontWeight.w500,
-                      color: Colors.grey,
-                    ),
-                    CDText(
-                      '${product.discountPercentage}%',
-                      fontSize: 14,
-                      fontWeight: FontWeight.w800,
-                      color: AppColors.primary,
-                    ),
-                  ],
+                child: FittedBox(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      CDText(
+                        'Pay',
+                        fontSize: 12,
+                        fontWeight: FontWeight.w500,
+                        color: Colors.grey,
+                      ),
+                      CDText(
+                        '${product.discountPercentage}%',
+                        fontSize: 14,
+                        fontWeight: FontWeight.w800,
+                        color: AppColors.primary,
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ),

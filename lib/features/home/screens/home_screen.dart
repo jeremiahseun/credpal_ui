@@ -1,6 +1,7 @@
 import 'package:credpal_test/constants/app_colors.dart';
 import 'package:credpal_test/features/home/data/merchants_data.dart';
 import 'package:credpal_test/features/home/screens/components/cd_text.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:gap/gap.dart';
@@ -22,7 +23,7 @@ class HomeScreen extends ConsumerWidget {
             child: Container(
               color: AppColors.secondary,
               padding: EdgeInsets.only(
-                top: MediaQuery.of(context).padding.top,
+                top: MediaQuery.of(context).padding.top + (kIsWeb ? 20 : 0),
                 left: 20,
                 right: 20,
                 bottom: 50,
