@@ -2,12 +2,12 @@ class Merchant {
   final String id;
   final String name;
   final String logoUrl;
-  final bool isVerified;
+  final bool isOnline;
 
   Merchant({
     required this.id,
     required this.name,
     required this.logoUrl,
-    this.isVerified = false,
+    this.isOnline = false,
   });
 }

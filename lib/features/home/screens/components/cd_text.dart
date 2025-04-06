@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../../../../constants/app_colors.dart';
@@ -69,19 +70,19 @@ class CDText extends StatelessWidget {
       style: switch (stylesUsed) {
         StylesUsed.avenir => GoogleFonts.averiaSansLibre(
             fontWeight: fontWeight,
-            fontSize: fontSize,
+            fontSize: fontSize.sp,
             color: color,
             height: height,
             decoration: decoration),
         StylesUsed.productSans => GoogleFonts.ptSans(
             fontWeight: fontWeight,
-            fontSize: fontSize,
+            fontSize: fontSize.sp,
             color: color,
             height: height,
             decoration: decoration),
         StylesUsed.axiforma => GoogleFonts.alexandria(
             fontWeight: fontWeight,
-            fontSize: fontSize,
+            fontSize: fontSize.sp,
             color: color,
             height: height,
             decoration: decoration),
@@ -89,145 +90,3 @@ class CDText extends StatelessWidget {
     );
   }
 }
-
-// class AppTextStyles {
-
-//   // Font families
-//   static const String _avenir = 'Avenir';
-//   static const String _productSans = 'Product Sans';
-//   static const String _axiforma = 'Axiforma';
-
-//   // Helper method to create TextStyle with Avenir font
-//   static TextStyle _avenirStyle({
-//     double size = 14,
-//     FontWeight weight = FontWeight.normal,
-//     Color color = AppColors.textPrimary,
-//     double? height,
-//     TextDecoration? decoration,
-//   }) {
-//     return GoogleFonts.averiaSansLibre(
-//       fontSize: size,
-//       fontWeight: weight,
-//       color: color,
-//       height: height,
-//       decoration: decoration,
-//     );
-//   }
-
-//   // Helper method to create TextStyle with Product Sans font
-//   static TextStyle _productSansStyle({
-//     double size = 14,
-//     FontWeight weight = FontWeight.normal,
-//     Color color = AppColors.textPrimary,
-//     double? height,
-//     TextDecoration? decoration,
-//   }) {
-//     return GoogleFonts.ptSans(
-//       fontSize: size,
-//       fontWeight: weight,
-//       color: color,
-//       height: height,
-//       decoration: decoration,
-//     );
-//   }
-
-//   // Helper method to create TextStyle with Axiforma font
-//   static TextStyle _axiformaStyle({
-//     double size = 14,
-//     FontWeight weight = FontWeight.normal,
-//     Color color = AppColors.textPrimary,
-//     double? height,
-//     TextDecoration? decoration,
-//   }) {
-//     return GoogleFonts.montserrat(
-//       // Using Montserrat as a fallback for Axiforma
-//       fontSize: size,
-//       fontWeight: weight,
-//       color: color,
-//       height: height,
-//       decoration: decoration,
-//     );
-//   }
-
-//   // Heading styles
-//   static TextStyle headingLarge = _productSansStyle(
-//     size: 32,
-//     weight: FontWeight.bold,
-//   );
-
-//   static TextStyle headingMedium = _productSansStyle(
-//     size: 24,
-//     weight: FontWeight.bold,
-//   );
-
-//   static TextStyle headingSmall = _productSansStyle(
-//     size: 20,
-//     weight: FontWeight.bold,
-//   );
-
-//   // Body text styles
-//   static TextStyle bodyLarge = _avenirStyle(
-//     size: 16,
-//     weight: FontWeight.normal,
-//   );
-
-//   static TextStyle bodyMedium = _avenirStyle(
-//     size: 14,
-//     weight: FontWeight.normal,
-//   );
-
-//   static TextStyle bodySmall = _avenirStyle(
-//     size: 12,
-//     weight: FontWeight.normal,
-//   );
-
-//   // Button text styles
-//   static TextStyle buttonLarge = _axiformaStyle(
-//     size: 16,
-//     weight: FontWeight.w600,
-//     color: AppColors.textLight,
-//   );
-
-//   static TextStyle buttonMedium = _axiformaStyle(
-//     size: 14,
-//     weight: FontWeight.w600,
-//     color: AppColors.textLight,
-//   );
-
-//   // Label styles
-//   static TextStyle labelLarge = _axiformaStyle(
-//     size: 14,
-//     weight: FontWeight.w500,
-//   );
-
-//   static TextStyle labelMedium = _axiformaStyle(
-//     size: 12,
-//     weight: FontWeight.w500,
-//   );
-
-//   static TextStyle labelSmall = _axiformaStyle(
-//     size: 10,
-//     weight: FontWeight.w500,
-//   );
-
-//   // Price styles
-//   static TextStyle priceRegular = _productSansStyle(
-//     size: 16,
-//     weight: FontWeight.w600,
-//     color: AppColors.primary,
-//   );
-
-//   static TextStyle priceStrikethrough = _productSansStyle(
-//     size: 14,
-//     weight: FontWeight.normal,
-//     color: AppColors.textSecondary,
-//     decoration: TextDecoration.lineThrough,
-//   );
-
-//   // Special styles
-//   static TextStyle discountBadge = _axiformaStyle(
-//     size: 12,
-//     weight: FontWeight.bold,
-//     color: AppColors.textLight,
-//   );
-// }

@@ -33,7 +33,7 @@ class MerchantCard extends StatelessWidget {
                 child: merchant.logoUrl.isNotEmpty
                     ? Image.asset(
                         merchant.logoUrl,
-                        fit: BoxFit.cover,
+                        fit: BoxFit.fitWidth,
                       )
                     : Icon(
                         Icons.store,
@@ -43,10 +43,10 @@ class MerchantCard extends StatelessWidget {
               ),
             ),
             // Verification Badge
-            if (merchant.isVerified)
+            if (merchant.isOnline)
               Positioned(
                 right: 0,
-                bottom: 0,
+                top: 0,
                 child: Container(
                   width: 18,
                   height: 18,
@@ -57,11 +57,6 @@ class MerchantCard extends StatelessWidget {
                       color: Colors.white,
                       width: 2,
                     ),
-                  ),
-                  child: const Icon(
-                    Icons.check,
-                    size: 12,
-                    color: Colors.white,
                   ),
                 ),
               ),

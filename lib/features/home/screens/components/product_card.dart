@@ -2,6 +2,8 @@ import 'package:credpal_test/constants/app_colors.dart';
 import 'package:credpal_test/features/home/screens/components/cd_text.dart';
 import 'package:credpal_test/models/product.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:gap/gap.dart';
 
 class ProductCard extends StatelessWidget {
   final Product product;
@@ -11,11 +13,12 @@ class ProductCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 160,
+      width: 161.w,
+      height: 174.h,
       margin: const EdgeInsets.only(right: 12),
       decoration: BoxDecoration(
         color: AppColors.cardBackground,
-        borderRadius: BorderRadius.circular(12),
+        borderRadius: BorderRadius.circular(10),
         boxShadow: [
           BoxShadow(
             color: AppColors.shadow,
@@ -24,98 +27,115 @@ class ProductCard extends StatelessWidget {
           ),
         ],
       ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+      child: Stack(
         children: [
-          Stack(
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.end,
             children: [
-              // Product Image
-              Container(
-                height: 120,
-                decoration: BoxDecoration(
-                  color: Colors.grey[100],
-                  borderRadius: const BorderRadius.only(
-                    topLeft: Radius.circular(12),
-                    topRight: Radius.circular(12),
-                  ),
-                ),
-                child: Center(
-                  child: product.imageUrl.isNotEmpty
-                      ? Image.asset(
-                          product.imageUrl,
-                          fit: BoxFit.cover,
-                          width: double.infinity,
-                          height: 120,
-                        )
-                      : Icon(
-                          Icons.image,
-                          size: 50,
-                          color: Colors.grey[400],
+              Padding(
+                padding: const EdgeInsets.all(12),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    CDText(
+                      product.name,
+                      fontSize: 14,
+                      fontWeight: FontWeight.w800,
+                    ),
+                    const Gap(4),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        CDText(
+                          '₦ ${product.currentPrice.toStringAsFixed(0)}',
+                          fontSize: 14,
+                          fontWeight: FontWeight.w800,
+                          color: AppColors.primary,
                         ),
+                        CDText(
+                          '₦ ${product.originalPrice.toStringAsFixed(0)}',
+                          fontSize: 12,
+                          fontWeight: FontWeight.w500,
+                          decoration: TextDecoration.lineThrough,
+                          color: Color(0xffB3B3CC),
+                        ),
+                      ],
+                    ),
+                  ],
                 ),
               ),
-              // Discount Badge
-              if (product.discountPercentage != null)
-                Positioned(
-                  top: 8,
-                  left: 8,
-                  child: Container(
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: 8,
-                      vertical: 4,
-                    ),
-                    decoration: BoxDecoration(
-                      color: AppColors.discountBadge,
-                      borderRadius: BorderRadius.circular(4),
-                    ),
-                    child: CDText(
-                      '${product.discountPercentage}%',
-                      fontSize: 12,
-                    ),
-                  ),
-                ),
-              // Merchant Logo
-              if (product.merchantLogo != null)
-                Positioned(
-                  top: 8,
-                  left: product.discountPercentage != null ? null : 8,
-                  right: product.discountPercentage != null ? 8 : null,
-                  child: Container(
-                    padding: const EdgeInsets.all(4),
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(4),
-                    ),
-                    child: CDText(
-                      product.merchantLogo!,
-                      fontSize: 12,
-                    ),
-                  ),
-                ),
             ],
           ),
-          Padding(
-            padding: const EdgeInsets.all(12),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                CDText(
-                  product.name,
-                  fontSize: 12,
-                ),
-                const SizedBox(height: 4),
-                CDText(
-                  '₦ ${product.currentPrice.toStringAsFixed(0)}',
-                  fontSize: 12,
-                ),
-                const SizedBox(height: 2),
-                CDText(
-                  '₦ ${product.originalPrice.toStringAsFixed(0)}',
-                  fontSize: 12,
-                ),
-              ],
+
+          //* Product Image
+          Positioned(
+            left: 0,
+            right: 0,
+            top: 10,
+            child: Visibility(
+              visible: product.imageUrl.isNotEmpty,
+              replacement: Icon(
+                Icons.image,
+                size: 50,
+                color: Colors.grey[400],
+              ),
+              child: Image.asset(
+                product.imageUrl,
+                width: 161.w,
+                height: 110.h,
+                fit: BoxFit.contain,
+              ),
             ),
           ),
+
+          //* Discount Badge
+          if (product.discountPercentage != null)
+            Positioned(
+              top: 8,
+              left: 8,
+              child: Container(
+                height: 45.h,
+                width: 45.w,
+                decoration: BoxDecoration(
+                  color: AppColors.white,
+                  shape: BoxShape.circle,
+                ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    CDText(
+                      'Pay',
+                      fontSize: 12,
+                      fontWeight: FontWeight.w500,
+                      color: Colors.grey,
+                    ),
+                    CDText(
+                      '${product.discountPercentage}%',
+                      fontSize: 14,
+                      fontWeight: FontWeight.w800,
+                      color: AppColors.primary,
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          //* Merchant Logo
+          if (product.merchantLogo != null)
+            Positioned(
+              top: 8,
+              left: product.discountPercentage != null ? null : 8,
+              right: product.discountPercentage != null ? 8 : null,
+              child: Container(
+                height: 45.h,
+                width: 45.w,
+                decoration: BoxDecoration(
+                  color: AppColors.white,
+                  shape: BoxShape.circle,
+                ),
+                child: Image.asset(product.merchantLogo!),
+              ),
+            ),
         ],
       ),
     );

@@ -8,8 +8,8 @@ class ProductsData {
         name: 'Nokia G20',
         currentPrice: 39780,
         originalPrice: 58000,
-        imageUrl:
-            'assets/images/products/nokia.png',
+        imageUrl: 'assets/images/products/nokia.png',
+        merchantLogo: 'assets/images/merchants/okayfones.png',
         discountPercentage: 40,
       ),
       Product(
@@ -18,7 +18,7 @@ class ProductsData {
         currentPrice: 295999,
         originalPrice: 315000,
         imageUrl: 'assets/images/products/xsmax.png',
-        merchantLogo: 'ogadget',
+        merchantLogo: 'assets/images/merchants/imate.png',
       ),
       Product(
         id: '3',
@@ -26,7 +26,7 @@ class ProductsData {
         currentPrice: 39780,
         originalPrice: 58000,
         imageUrl: 'assets/images/products/anker.png',
-        merchantLogo: 'jumia',
+        merchantLogo: 'assets/images/merchants/ogabassey.png',
       ),
       Product(
         id: '4',
@@ -34,7 +34,39 @@ class ProductsData {
         currentPrice: 490500,
         originalPrice: 515000,
         imageUrl: 'assets/images/products/12-pro.png',
-        merchantLogo: 'istore',
+        merchantLogo: 'assets/images/merchants/imate.png',
+      ),
+      Product(
+        id: '5',
+        name: 'iPhone 13 Pro',
+        currentPrice: 490500,
+        originalPrice: 515000,
+        imageUrl: 'assets/images/products/12-pro.png',
+        merchantLogo: 'assets/images/merchants/orile.png',
+      ),
+      Product(
+        id: '6',
+        name: 'iPhone 14',
+        currentPrice: 490500,
+        originalPrice: 515000,
+        imageUrl: 'assets/images/products/12-pro.png',
+        merchantLogo: 'assets/images/merchants/slot.png',
+      ),
+      Product(
+        id: '7',
+        name: 'iPhone 13 Pro',
+        currentPrice: 490500,
+        originalPrice: 515000,
+        imageUrl: 'assets/images/products/12-pro.png',
+        merchantLogo: 'assets/images/merchants/dw.png',
+      ),
+      Product(
+        id: '8',
+        name: 'iPhone 13 Pro',
+        currentPrice: 490500,
+        originalPrice: 515000,
+        imageUrl: 'assets/images/products/12-pro.png',
+        merchantLogo: 'assets/images/merchants/imate.png',
       ),
     ];
   }
