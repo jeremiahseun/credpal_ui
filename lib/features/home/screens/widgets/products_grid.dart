@@ -21,36 +21,39 @@ class ProductsGridSection extends StatelessWidget {
     }
 
     return SliverToBoxAdapter(
-      child: Padding(
-        padding: const EdgeInsets.only(left: 20, top: 24, bottom: 16),
-        child: SizedBox(
-          height: 380.h, // Fixed height for the two rows
-          child: ListView.builder(
-            scrollDirection: Axis.horizontal,
-            itemCount: productPairs.length,
-            itemBuilder: (context, index) {
-              final pair = productPairs[index];
-              return Container(
-                width: 160, // Fixed width for each column
-                margin: const EdgeInsets.only(right: 10),
-                child: Column(
-                  children: [
-                    // First row item (always exists)
-                    Expanded(
-                      child: ProductCard(product: pair[0]),
-                    ),
-                    const Gap(30), // Spacing between rows
-                    // Second row item (may not exist if odd number of products)
-                    Expanded(
-                      child: pair.length > 1
-                          ? ProductCard(product: pair[1])
-                          : const SizedBox
-                              .shrink(), // Empty space for odd count
-                    ),
-                  ],
-                ),
-              );
-            },
+      child: ColoredBox(
+        color: const Color(0xFFEEF3FF),
+        child: Padding(
+          padding: const EdgeInsets.only(left: 20, top: 24, bottom: 16),
+          child: SizedBox(
+            height: 380.h, // Fixed height for the two rows
+            child: ListView.builder(
+              scrollDirection: Axis.horizontal,
+              itemCount: productPairs.length,
+              itemBuilder: (context, index) {
+                final pair = productPairs[index];
+                return Container(
+                  width: 160, // Fixed width for each column
+                  margin: const EdgeInsets.only(right: 10),
+                  child: Column(
+                    children: [
+                      // First row item (always exists)
+                      Expanded(
+                        child: ProductCard(product: pair[0]),
+                      ),
+                      const Gap(30), // Spacing between rows
+                      // Second row item (may not exist if odd number of products)
+                      Expanded(
+                        child: pair.length > 1
+                            ? ProductCard(product: pair[1])
+                            : const SizedBox
+                                .shrink(), // Empty space for odd count
+                      ),
+                    ],
+                  ),
+                );
+              },
+            ),
           ),
         ),
       ),

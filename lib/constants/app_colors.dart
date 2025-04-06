@@ -9,5 +9,5 @@ class AppColors {
 
   static const Color cardBackground = Colors.white;
   static const Color shadow = Color(0x1A000000);
-  static const Color discountBadge = Color(0xFF3366FF);
+  static const Color lightSecColor = Color(0xffF1F3FE);
 }
