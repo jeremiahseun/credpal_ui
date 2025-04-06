@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'features/home/screens/home_screen.dart';
@@ -27,16 +28,18 @@ class MyApp extends StatelessWidget {
         minTextAdapt: true,
         splitScreenMode: true,
         builder: (_, child) {
-          return MaterialApp(
-            title: 'CredPal',
-            debugShowCheckedModeBanner: false,
-            theme: ThemeData(
-              colorScheme:
-                  ColorScheme.fromSeed(seedColor: const Color(0xFF2D5BFF)),
-              useMaterial3: true,
-              scaffoldBackgroundColor: Colors.white,
+          return ProviderScope(
+            child: MaterialApp(
+              title: 'CredPal',
+              debugShowCheckedModeBanner: false,
+              theme: ThemeData(
+                colorScheme:
+                    ColorScheme.fromSeed(seedColor: const Color(0xFF2D5BFF)),
+                useMaterial3: true,
+                scaffoldBackgroundColor: Colors.white,
+              ),
+              home: const HomeScreen(),
             ),
-            home: const HomeScreen(),
           );
         });
   }

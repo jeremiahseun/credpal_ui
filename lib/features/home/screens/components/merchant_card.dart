@@ -1,6 +1,7 @@
 import 'package:credpal_test/features/home/screens/components/cd_text.dart';
 import 'package:credpal_test/models/merchant.dart';
 import 'package:flutter/material.dart';
+import 'package:gap/gap.dart';
 
 class MerchantCard extends StatelessWidget {
   final Merchant merchant;
@@ -62,7 +63,7 @@ class MerchantCard extends StatelessWidget {
               ),
           ],
         ),
-        const SizedBox(height: 8),
+        const Gap(8),
         CDText.avenir(
           merchant.name,
           fontSize: 12,

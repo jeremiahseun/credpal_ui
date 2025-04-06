@@ -9,7 +9,6 @@ class ProductsData {
         currentPrice: 39780,
         originalPrice: 58000,
         imageUrl: 'assets/images/products/nokia.png',
-        merchantLogo: 'assets/images/merchants/okayfones.png',
         discountPercentage: 40,
       ),
       Product(

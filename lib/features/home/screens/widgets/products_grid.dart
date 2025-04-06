@@ -24,10 +24,11 @@ class ProductsGridSection extends StatelessWidget {
       child: ColoredBox(
         color: const Color(0xFFEEF3FF),
         child: Padding(
-          padding: const EdgeInsets.only(left: 20, top: 24, bottom: 16),
+          padding: const EdgeInsets.only(top: 24, bottom: 16),
           child: SizedBox(
             height: 380.h, // Fixed height for the two rows
             child: ListView.builder(
+              padding: const EdgeInsets.only(left: 20),
               scrollDirection: Axis.horizontal,
               itemCount: productPairs.length,
               itemBuilder: (context, index) {

@@ -37,7 +37,7 @@ class MerchantsData {
         id: '6',
         name: 'Casper Stores',
         logoUrl: 'assets/images/merchants/orile.png',
-        isOnline: true,
+        isOnline: false,
       ),
       Merchant(
         id: '7',
