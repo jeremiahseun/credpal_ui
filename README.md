@@ -15,12 +15,12 @@ This project is a Flutter implementation of the CredPal mobile application UI ba
 ## Technologies Used
 
 - **Flutter**: SDK version ^3.6.0
-- **State Management**: Flutter Riverpod (^2.6.1)
-- **Responsive UI**: Flutter ScreenUtil (^5.9.3)
+- **State Management**: Flutter Riverpod
+- **Responsive UI**: Flutter ScreenUtil
 - **UI Components**:
-  - Flutter SVG (^2.0.17) for vector icons
-  - Gap (^3.0.1) for spacing
-  - Google Fonts (^6.2.1) for typography
+  - Flutter SVG for vector icons
+  - Gap for spacing
+  - Google Fonts for typography
 
 ## Project Structure
 
@@ -52,7 +52,7 @@ lib/
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/yourusername/credpal_test.git
+   git clone https://github.com/jeremiahseun/credpal_test.git
    cd credpal_test
    ```
 
@@ -98,7 +98,6 @@ The web release files will be located in the `build/web` directory.
 
 ### UI Components
 
-- **ConstrainedLayout**: A custom widget that constrains the app's width on larger screens (like web) to maintain a mobile-like experience
 - **ProductCard**: Displays product information with price, discount, and merchant logo
 - **MerchantCard**: Shows merchant information with online status indicator
 - **CDText**: Custom text widget for consistent typography throughout the app
@@ -125,8 +124,6 @@ The app uses Flutter ScreenUtil to ensure UI elements scale appropriately across
 3. **Functionality**: UI elements like the search bar and scan button are non-functional as the assessment focuses on UI implementation rather than functionality.
 
 4. **Portrait Mode Only**: The app is designed to work in portrait mode only, as this appears to be the intended design from the Figma file.
-
-5. **Web Compatibility**: Added a ConstrainedLayout widget to ensure the app looks good on web by constraining its width to maintain a mobile-like experience.
 
 ## Screenshots
 
